@@ -3,7 +3,8 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('materialAppApp'));
+  beforeEach(module('matpadApp'));
+  beforeEach(module('socketMock'));
 
   var MainCtrl,
       scope,

@@ -1,4 +1,4 @@
-// Generated on 2016-03-22 using generator-angular-material-fullstack 0.1.2
+// Generated on 2016-03-28 using generator-angular-material-fullstack 0.1.2
 'use strict';
 
 module.exports = function (grunt) {
@@ -319,7 +319,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'materialAppApp',
+        module: 'matpadApp',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,

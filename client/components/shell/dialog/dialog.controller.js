@@ -1,10 +1,18 @@
 'use strict';
 
-angular.module('materialAppApp')
-  .controller('DialogController', function ($scope, $mdDialog) {
+angular.module('matpadApp')
+  .controller('DialogController', function ($scope, $mdDialog, $http) {
   $scope.closeDialog = function() {
     $mdDialog.hide();
   };
 
   
+  $scope.addThing = function() {
+    if($scope.newThing === '') {
+      return;
+    }
+    $http.post('/api/things', { name: $scope.newThing });
+    $scope.newThing = '';
+    $mdDialog.hide();
+  };
 });

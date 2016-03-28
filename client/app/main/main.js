@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('materialAppApp')
+angular.module('matpadApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {

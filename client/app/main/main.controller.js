@@ -1,11 +1,12 @@
 'use strict';
 
-angular.module('materialAppApp')
-  .controller('MainCtrl', function ($scope, $http) {
+angular.module('matpadApp')
+  .controller('MainCtrl', function ($scope, $http, socket) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
+      socket.syncUpdates('thing', $scope.awesomeThings);
     });
 
     $scope.getColor = function($index) {
@@ -37,4 +38,11 @@ angular.module('materialAppApp')
       }
     };
 
+    $scope.deleteThing = function(thing) {
+      $http.delete('/api/things/' + thing._id);
+    };
+
+    $scope.$on('$destroy', function () {
+      socket.unsyncUpdates('thing');
+    });
   });

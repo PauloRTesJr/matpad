@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/materialapp-dev'
+    uri: 'mongodb://localhost/matpad-dev'
   },
 
   seedDB: true

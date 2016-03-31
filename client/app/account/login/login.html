@@ -1,11 +1,16 @@
-<md-content class="md-padding">
-    <md-card class="login-card">
-      <md-card-content>
-        <h2 class="md-title">Login</h2>
+<md-content class="md-padding login-content">
+  <div class="login-bar"></div>
+  <md-card class="login-card">
+    <md-card-content>
+      <div layout="row" layout-align="center center">
+        <img src="http://www.iconarchive.com/download/i98534/elegantthemes/beautiful-flat/compose.ico" />
+      </div>
+      <!-- <h2>Login</h2>
         <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-        <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+        <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p> -->
 
-        <form name="form" ng-submit="login(form)" novalidate>
+      <form name="form" ng-submit="login(form)" novalidate>
+        <div layout="row" layout-align="center center">
           <md-input-container>
             <label>Email</label>
             <input required type="email" name="email" ng-model="user.email">
@@ -13,6 +18,8 @@
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
+        </div>
+        <div layout="row" layout-align="center center">
           <md-input-container>
             <label>Password</label>
             <input required type="password" name="password" ng-model="user.password">
@@ -20,14 +27,18 @@
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
-          <div layout="row">
-            <md-button class="md-primary" type="submit">Login</md-button>
-            <md-button flex type="submit" href="/signup">Register</md-button>
-          </div>
-        </form>
-      </md-card-content>
-    </md-card>
-    <div class="love-message">Generated with <md-icon md-svg-icon="action:favorite" class="md-warn"></md-icon> by <a href="https://github.com/sincraianul/generator-angular-material-fullstack">generator-angular-material-fullstack</a>.</div>
+        </div>
+        <div layout="row" class="login-button-row">
+            <div flex class="login-button-content">
+                <md-button class="md-raised md-primary login-button-submit" type="submit">Login</md-button>
+            </div>
+            <div flex class="login-button-content">
+                <md-button type="submit" class="md-accent md-raised login-button-register" href="/signup">Register</md-button>
+            </div>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
 </md-content>
 
 

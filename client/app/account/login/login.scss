@@ -1,11 +1,46 @@
 .login-card, .register-card {
-  max-width: 300px;
-  margin: 0 auto;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15em;
 }
 
-.love-message {
-  margin-top: 64px;
-  text-align: center;
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #909;
+}
+
+.login-content{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: $primary-color;
+}
+
+.login-bar{
+    position: fixed;
+    width: 100%;
+    height: 30%;
+    left: 0;
+    top: 35%;
+    background: $secondary-color;
+    z-index: -10;
+}
+
+.login-button-submit{
+    background: $secondary-color!important;
+    color: $primary-color!important;
+}
+.login-button-register{
+    background: $forth-color!important;
+    color: $primary-color!important;
+}
+.login-button-content{
+    text-align: center;
+}
+.login-button-row{
+    background: $third-color;
 }
 //
-// 
+//

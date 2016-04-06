@@ -18,6 +18,19 @@ $forth-color: #aaaaaa;
    }
  }
 
+ md-toolbar{
+     background: $primary-color!important;
+     color: $forth-color!important;
+ }
+
+ .primary-background{
+     background: $primary-color!important;
+     color: $third-color!important;
+ }
+ .icon-color{
+     color: $secondary-color!important;
+ }
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';

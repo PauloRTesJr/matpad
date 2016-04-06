@@ -1,17 +1,37 @@
 <div ng-include="'components/shell/shell.html'"></div>
 
-<md-grid-list class="things-list" md-cols-sm="1" md-cols-md="2" md-cols-gt-md="5"
-        md-row-height-gt-md="1:1" md-row-height="4:3"
-        md-gutter="8px" md-gutter-gt-sm="4px">
-  <md-grid-tile ng-repeat="thing in awesomeThings" ng-class="getColor($index)" md-rowspan="{{getSpan($index)}}"
-                  md-colspan="{{getSpan($index)}}"
-                  md-colspan-sm="1">
-    
-    <md-button aria-label="Remove item" class="md-icon-button delete-btn" ng-click="deleteThing(thing)">
-      <md-icon style="fill: #fff" md-svg-icon="action:delete"></md-icon>
-    </md-button>
-    
-    <md-icon class="avatar-icon" md-svg-icon="avatar:svg-{{ ($index + 1) % 11 }}"></md-icon>
-    <md-grid-tile-footer><h3>{{thing.name}}</h3></md-grid-tile-footer>
-  </md-grid-tile>
-</md-grid-list>
+
+<div ng-show="getCurrentUser().name">
+  <md-grid-list class="things-list" md-cols-sm="1" md-cols-md="2" md-cols-gt-md="5" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px">
+    <md-grid-tile ng-repeat="thing in awesomeThings" ng-class="getColor($index)" md-rowspan="{{getSpan($index)}}" md-colspan="{{getSpan($index)}}" md-colspan-sm="1">
+
+      <md-button aria-label="Remove item" class="md-icon-button delete-btn" ng-click="deleteThing(thing)">
+        <md-icon style="fill: #fff" md-svg-icon="action:delete"></md-icon>
+      </md-button>
+
+      <md-icon class="avatar-icon" md-svg-icon="avatar:svg-{{ ($index + 1) % 11 }}"></md-icon>
+      <md-grid-tile-footer>
+        <h3>{{thing.name}}</h3></md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+
+<div ng-show="!getCurrentUser().name">
+    <md-content flex layout-padding>
+        <div layout="row" layout-align="center center">
+            <h3>You are not allowed to see this page, to continue, please Login with your account or register a new one.</h3>
+        </div>
+        <div layout="row" layout-align="center center">
+            <md-button type="submit" class="md-raised md-primary login-button-submit" href="/login">Login</md-button>
+            <md-button type="submit" class="md-accent md-raised login-button-register" href="/signup">Register</md-button>
+            <div layout="column" layout-align="center center">
+                <div flex layout-align="center center">
+
+                </div>
+                <div flex layout-align="center center">
+
+                </div>
+            </div>
+        </div>
+    </md-content>
+</div>

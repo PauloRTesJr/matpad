@@ -1,4 +1,8 @@
 # matpad
-A notepad made in material design with AngularJS.
+Generated with yo with Angular front and Node with MongoDB as API.
 
-Just trying to start a new personal project. :)
+Using grunt.
+
+Just remade login and sigin screens to my own, no services were changed.
+
+Stopped for now.
